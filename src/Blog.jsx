@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
+import { Header } from './components';
 import styles from './app.module.css';
 
-const Header = () => <div>Шапка</div>;
 const Footer = () => <div>Футер</div>;
 
 export const Blog = () => {
