@@ -1,7 +1,6 @@
 import { getUsers } from './getUsers';
 
-export const getUser = async (loginForFind) => {
-	const users = await getUsers();
-
-	return users.find((user) => loginForFind === user.login);
-};
+export const getUser = async (loginForFind) =>
+	fetch(`http://localhost:3005/users?login=${loginForFind}`)
+		.then((loadedUsers) => loadedUsers.json())
+		.then(([user]) => user);
