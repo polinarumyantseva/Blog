@@ -1,19 +1,24 @@
 .right-aligned {
 	display: flex;
 	justify-content: flex-end;
-}
-.button {
-	display: flex;
-	justify-content: center;
 	align-items: center;
-	font-size: 18px;
-	width: 100px;
-	height: 32px;
-	cursor: pointer;
-	border: 1px solid #000;
-	background: #eee;
 }
 
 .icon-back:hover {
 	cursor: pointer;
+}
+
+.icon-logout {
+	padding: 4px 0;
+}
+.icon-logout > i {
+	margin-top: 0;
+}
+.icon-logout:hover {
+	cursor: pointer;
+}
+
+.user-name {
+	font-size: 18px;
+	font-weight: bold;
 }
