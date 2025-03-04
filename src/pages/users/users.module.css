@@ -1,0 +1,21 @@
+.users {
+	display: flex;
+	width: 570px;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+}
+
+.table-row {
+	display: flex;
+}
+
+.login-column {
+	width: 172px;
+}
+.registered-at-column {
+	width: 231px;
+}
+.role-column {
+	width: auto;
+}

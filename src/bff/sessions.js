@@ -8,4 +8,9 @@ export const sessions = {
 	remove(hash) {
 		delete this.list[hash];
 	},
+	access(hash, accessRole) {
+		const user = this.list[hash];
+
+		return !!user && accessRole.includes(user.roleId);
+	},
 };
