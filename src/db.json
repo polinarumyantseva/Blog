@@ -129,5 +129,72 @@
       "published_at": "2023-12-02"
     }
   ],
-  "comments": []
+  "comments": [
+    {
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2042-12-04 09:51",
+      "content": "sd",
+      "id": 1
+    },
+    {
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2058-07-14 12:09",
+      "content": "мой первый комментарий\n",
+      "id": 2
+    },
+    {
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2037-05-01 15:59",
+      "content": "мой первый комментарий4",
+      "id": 3
+    },
+    {
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2055-02-09 11:31",
+      "content": "мой первый комментарий43",
+      "id": 4
+    },
+    {
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2049-06-01 23:59",
+      "content": "мой первый комментарий435",
+      "id": 5
+    },
+    {
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2044-06-10 15:30",
+      "content": "new",
+      "id": 6
+    }
+  ],
+  "sessions": [
+    {
+      "hash": "0.02888821088335546960479405242949724197387695312500",
+      "user": {
+        "id": "001",
+        "login": "ivan",
+        "password": "qwerty",
+        "registedAt": "2025-01-12",
+        "roleId": 0
+      },
+      "id": 1
+    },
+    {
+      "hash": "0.58780707104703133758505373407388105988502502441406",
+      "user": {
+        "id": "001",
+        "login": "ivan",
+        "password": "qwerty",
+        "registedAt": "2025-01-12",
+        "roleId": 0
+      },
+      "id": 2
+    }
+  ]
 }

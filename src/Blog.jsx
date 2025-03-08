@@ -1,9 +1,27 @@
+import { useLayoutEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { Header, Footer } from './components';
-import { Authorization, Registration, Users } from './pages';
+import { setUser } from './actions';
+import { Authorization, Registration, Users, Post } from './pages';
 import styles from './app.module.css';
 
 export const Blog = () => {
+	const dispatch = useDispatch();
+	useLayoutEffect(() => {
+		const currentUserDataJSON = sessionStorage.getItem('userData');
+		if (!currentUserDataJSON) {
+			return;
+		}
+		const currrentUserData = JSON.parse(currentUserDataJSON);
+		dispatch(
+			setUser({
+				...currrentUserData,
+				roleId: Number(currrentUserData.roleId),
+			}),
+		);
+	}, []);
+
 	return (
 		<div className={styles.app}>
 			<Header />
@@ -14,7 +32,7 @@ export const Blog = () => {
 					<Route path="/register" element={<Registration />} />
 					<Route path="/users" element={<Users />} />
 					<Route path="/post" element={<div>Новая статья</div>} />
-					<Route path="/post/:postId" element={<div>Статья</div>} />
+					<Route path="/post/:id" element={<Post />} />
 					<Route path="*" element={<div>Ошибка</div>} />
 				</Routes>
 			</div>

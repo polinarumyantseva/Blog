@@ -13,6 +13,11 @@ export const ControlPanel = () => {
 	const login = useSelector(selectLogin);
 	const session = useSelector(selectUserSession);
 
+	const onLogout = () => {
+		dispatch(logout(session));
+		sessionStorage.removeItem('userData');
+	};
+
 	return (
 		<div className="">
 			<div className={styles['right-aligned']}>
@@ -23,7 +28,7 @@ export const ControlPanel = () => {
 				) : (
 					<>
 						<span className={styles['user-name']}>{login}</span>
-						<div className={styles['icon-logout']} onClick={() => dispatch(logout(session))}>
+						<div className={styles['icon-logout']} onClick={onLogout}>
 							<Icon className="control-panel-icon" id="sign-out" />
 						</div>
 					</>
