@@ -4,3 +4,6 @@ export * from './logout';
 export * from './setPostData';
 export * from './loadPostAsync';
 export * from './addCommentAsync';
+export * from './removeCommentAsync';
+export * from './closeModal';
+export * from './openModal';

@@ -133,13 +133,6 @@
     {
       "author_id": "001",
       "post_id": "001",
-      "published_at": "2042-12-04 09:51",
-      "content": "sd",
-      "id": 1
-    },
-    {
-      "author_id": "001",
-      "post_id": "001",
       "published_at": "2058-07-14 12:09",
       "content": "мой первый комментарий\n",
       "id": 2
@@ -157,20 +150,6 @@
       "published_at": "2055-02-09 11:31",
       "content": "мой первый комментарий43",
       "id": 4
-    },
-    {
-      "author_id": "001",
-      "post_id": "001",
-      "published_at": "2049-06-01 23:59",
-      "content": "мой первый комментарий435",
-      "id": 5
-    },
-    {
-      "author_id": "001",
-      "post_id": "001",
-      "published_at": "2044-06-10 15:30",
-      "content": "new",
-      "id": 6
     }
   ],
   "sessions": [

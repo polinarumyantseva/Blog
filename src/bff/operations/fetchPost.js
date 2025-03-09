@@ -14,8 +14,6 @@ export const fetchPost = async (postId) => {
 		};
 	});
 
-	console.log(commentsWithAuthor);
-
 	return {
 		error: null,
 		res: {
