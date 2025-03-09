@@ -7,30 +7,11 @@
 	margin: 0 20px 10px 0;
 }
 .post-content > h2 {
-	margin: 0 0 20px;
+	margin: 0;
 	text-align: left;
-}
-
-.special-panel {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 20px;
-	font-size: 18px;
-}
-
-.published-at {
-	display: flex;
-	align-items: center;
-	gap: 7px;
-}
-.buttons-panel {
-	display: flex;
-	align-items: center;
-	gap: 20px;
-	font-size: 21px;
 }
 
 .post-text {
 	font-size: 18px;
+	white-space: pre-line;
 }

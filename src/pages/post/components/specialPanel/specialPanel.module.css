@@ -1,0 +1,22 @@
+.special-panel {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px 0;
+	font-size: 18px;
+}
+
+.published-at {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+}
+.buttons-panel {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	font-size: 21px;
+}
+.buttons-panel i {
+	cursor: pointer;
+}
