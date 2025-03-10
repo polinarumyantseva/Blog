@@ -32,6 +32,7 @@ export const PostForm = ({ post: { id, title, content, publishedAt, imageUrl } }
 			<Input ref={imageRef} defaultValue={imageUrl} placeholder="Изображение" />
 			<Input ref={titleRef} defaultValue={title} placeholder="Заголовок" />
 			<SpecialPanel
+				id={id}
 				publishedAt={publishedAt}
 				editButton={
 					<div onClick={onSave}>

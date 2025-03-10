@@ -11,6 +11,7 @@ export const PostContent = ({ post: { id, title, content, publishedAt, imageUrl 
 			<img className={styles['post-img']} src={imageUrl} alt={title} />
 			<H2>{title}</H2>
 			<SpecialPanel
+				id={id}
 				publishedAt={publishedAt}
 				editButton={
 					<div onClick={() => navigate(`/post/${id}/edit`)}>
