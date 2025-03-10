@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, useLayoutEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Input, Icon } from '../../../../components';
@@ -13,24 +13,34 @@ export const PostForm = ({ post: { id, title, content, publishedAt, imageUrl } }
 	const requestServer = useServerRequest();
 	const navigate = useNavigate();
 
-	const imageRef = useRef(null);
-	const titleRef = useRef(null);
+	const [imageUrlValue, setImageUrlValue] = useState(imageUrl);
+	const [titleValue, setTitleValue] = useState(title);
 	const contentRef = useRef(null);
 
+	useLayoutEffect(() => {
+		setImageUrlValue(imageUrl);
+		setTitleValue(title);
+	}, [imageUrl, title]);
+
 	const onSave = () => {
-		const newImageUrl = imageRef.current.value;
-		const newTitle = titleRef.current.value;
 		const newContent = sanitizeContent(contentRef.current.innerHTML);
 
 		dispatch(
-			savePostAsync(requestServer, { id, imageUrl: newImageUrl, title: newTitle, content: newContent }),
-		).then(() => navigate(`/post/${id}`));
+			savePostAsync(requestServer, { id, imageUrl: imageUrlValue, title: titleValue, content: newContent }),
+		).then(({ id }) => navigate(`/post/${id}`));
+	};
+
+	const onImageChange = ({ target }) => {
+		setImageUrlValue(target.value);
+	};
+	const onTitleChange = ({ target }) => {
+		setTitleValue(target.value);
 	};
 
 	return (
 		<div className={styles['post-content']}>
-			<Input ref={imageRef} defaultValue={imageUrl} placeholder="Изображение" />
-			<Input ref={titleRef} defaultValue={title} placeholder="Заголовок" />
+			<Input value={imageUrlValue} placeholder="Изображение..." onChange={onImageChange} />
+			<Input value={titleValue} placeholder="Заголовок..." onChange={onTitleChange} />
 			<SpecialPanel
 				id={id}
 				publishedAt={publishedAt}

@@ -26,14 +26,16 @@ export const SpecialPanel = ({ id, publishedAt, editButton }) => {
 	return (
 		<div className={styles['special-panel']}>
 			<div className={styles['published-at']}>
-				<Icon className="panel-icon" id="calendar-o" />
+				{publishedAt && <Icon className="panel-icon" id="calendar-o" />}
 				{publishedAt}
 			</div>
 			<div className={styles['buttons-panel']}>
 				{editButton}
-				<div onClick={() => onPostRemove(id)}>
-					<Icon id="trash-o" />
-				</div>
+				{publishedAt && (
+					<div onClick={() => onPostRemove(id)}>
+						<Icon id="trash-o" />
+					</div>
+				)}
 			</div>
 		</div>
 	);
