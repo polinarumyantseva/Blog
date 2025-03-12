@@ -1,0 +1,18 @@
+.search {
+	display: flex;
+	width: 340px;
+	height: 40px;
+	margin: 40px auto 0;
+	position: relative;
+	z-index: 10;
+}
+
+.search > input {
+	padding: 10px 32px 10px 10px;
+}
+.search > i {
+	position: absolute;
+	right: 10px;
+	top: 9px;
+	font-size: 19px;
+}

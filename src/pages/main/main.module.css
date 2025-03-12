@@ -1,5 +1,17 @@
+.posts {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 30px;
+	min-height: calc(100vh - 120px - 120px);
+}
+
 .post-list {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 20px;
+}
+.no-posts-found {
+	margin: 40px 0;
+	font-size: 18px;
+	text-align: center;
 }
