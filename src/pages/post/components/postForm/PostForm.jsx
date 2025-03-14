@@ -6,6 +6,7 @@ import { SpecialPanel } from '../specialPanel/SpecialPanel';
 import { useServerRequest } from '../../../../hooks';
 import { savePostAsync } from '../../../../actions';
 import { sanitizeContent } from './utils';
+import { PROP_TYPE } from '../../../../constants';
 import styles from './postForm.module.css';
 
 export const PostForm = ({ post: { id, title, content, publishedAt, imageUrl } }) => {
@@ -60,4 +61,8 @@ export const PostForm = ({ post: { id, title, content, publishedAt, imageUrl } }
 			</div>
 		</div>
 	);
+};
+
+PostForm.propTypes = {
+	post: PROP_TYPE.POST.isRequired,
 };

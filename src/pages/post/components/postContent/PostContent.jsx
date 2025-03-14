@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { H2, Icon } from '../../../../components';
 import { SpecialPanel } from '../specialPanel/SpecialPanel';
+import { PROP_TYPE } from '../../../../constants';
 import styles from './postContent.module.css';
 
 export const PostContent = ({ post: { id, title, content, publishedAt, imageUrl } }) => {
@@ -22,4 +23,8 @@ export const PostContent = ({ post: { id, title, content, publishedAt, imageUrl 
 			<div className={styles['post-text']}>{content}</div>
 		</div>
 	);
+};
+
+PostContent.propTypes = {
+	post: PROP_TYPE.POST.isRequired,
 };

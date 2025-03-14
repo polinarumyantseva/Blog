@@ -1,6 +1,8 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Icon } from '../../../../components';
 import { useServerRequest } from '../../../../hooks';
+import { PROP_TYPE } from '../../../../constants';
 import styles from './userRow.module.css';
 
 export const UserRow = ({ id, login, registedAt, roleId: userRoleId, roles, onUserRemove }) => {
@@ -44,4 +46,13 @@ export const UserRow = ({ id, login, registedAt, roleId: userRoleId, roles, onUs
 			</div>
 		</div>
 	);
+};
+
+UserRow.propTypes = {
+	id: PropTypes.string.isRequired,
+	login: PropTypes.string.isRequired,
+	registedAt: PropTypes.string.isRequired,
+	roleId: PROP_TYPE.ROLE_ID.isRequired,
+	roles: PropTypes.arrayOf(PROP_TYPE.ROLE).isRequired,
+	onUserRemove: PropTypes.func.isRequired,
 };

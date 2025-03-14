@@ -1,4 +1,5 @@
 import { H2 } from '../h2/H2';
+import { PROP_TYPE } from '../../constants/propType';
 import styles from './error.module.css';
 
 export const Error = ({ error }) =>
@@ -8,3 +9,7 @@ export const Error = ({ error }) =>
 			<div className={styles['error-text']}>{error}</div>
 		</>
 	);
+
+Error.propTypes = {
+	error: PROP_TYPE.ERROR,
+};
