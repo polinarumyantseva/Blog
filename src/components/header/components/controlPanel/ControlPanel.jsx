@@ -4,6 +4,7 @@ import { Icon, Button } from '../../../../components';
 import { ROLE } from '../../../../constants';
 import { selectUserRole, selectLogin, selectUserSession } from '../../../../selectors';
 import { logout } from '../../../../actions';
+import { checkAccess } from '../../../../utils';
 import styles from './controlPanel.module.css';
 
 export const ControlPanel = () => {
@@ -17,6 +18,8 @@ export const ControlPanel = () => {
 		dispatch(logout(session));
 		sessionStorage.removeItem('userData');
 	};
+
+	const isAdmin = checkAccess([ROLE.ADMIN], roleId);
 
 	return (
 		<div className="">
@@ -38,12 +41,16 @@ export const ControlPanel = () => {
 				<div className={styles['icon-back']} onClick={() => navigate(-1)}>
 					<Icon className="control-panel-icon" id="backward" />
 				</div>
-				<Link to="/post">
-					<Icon className="control-panel-icon" id="file-text-o" />
-				</Link>
-				<Link to="/users">
-					<Icon className="control-panel-icon" id="users" />
-				</Link>
+				{isAdmin && (
+					<>
+						<Link to="/post">
+							<Icon className="control-panel-icon" id="file-text-o" />
+						</Link>
+						<Link to="/users">
+							<Icon className="control-panel-icon" id="users" />
+						</Link>
+					</>
+				)}
 			</div>
 		</div>
 	);

@@ -6,8 +6,8 @@ import { Comments, PostContent, PostForm } from './components';
 import { loadPostAsync, RESET_POST_DATA } from '../../actions';
 import { selectPost } from '../../selectors';
 import { Error, PrivateContent } from '../../components';
-import styles from './post.module.css';
 import { ROLE } from '../../constants';
+import styles from './post.module.css';
 
 export const Post = () => {
 	const [error, setError] = useState(null);

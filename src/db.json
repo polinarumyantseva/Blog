@@ -133,20 +133,6 @@
     {
       "author_id": "001",
       "post_id": "003",
-      "published_at": "2046-06-15 08:19",
-      "content": "123",
-      "id": 1
-    },
-    {
-      "author_id": "001",
-      "post_id": "003",
-      "published_at": "2046-06-08 09:36",
-      "content": "123123",
-      "id": 2
-    },
-    {
-      "author_id": "001",
-      "post_id": "003",
       "published_at": "2041-09-21 14:14",
       "content": "34345345",
       "id": 3
@@ -157,6 +143,34 @@
       "published_at": "2042-09-03 04:59",
       "content": "qweqeq",
       "id": 4
+    },
+    {
+      "author_id": "001",
+      "post_id": "003",
+      "published_at": "2051-12-05 02:15",
+      "content": "ertetr",
+      "id": 6
+    },
+    {
+      "author_id": "001",
+      "post_id": "003",
+      "published_at": "2057-01-28 03:29",
+      "content": "erferfer",
+      "id": 7
+    },
+    {
+      "author_id": "001",
+      "post_id": "003",
+      "published_at": "2064-01-07 11:31",
+      "content": "ewr",
+      "id": 8
+    },
+    {
+      "author_id": "001",
+      "post_id": "003",
+      "published_at": "2035-01-21 17:00",
+      "content": "we",
+      "id": 9
     }
   ],
   "sessions": [
@@ -181,17 +195,6 @@
         "roleId": 0
       },
       "id": 2
-    },
-    {
-      "hash": "0.59820412553191482096792697120690718293190002441406",
-      "user": {
-        "id": "dCc4T3y",
-        "login": "ivan1",
-        "password": "qweqwe",
-        "registedAt": "2037-01-03 09:01",
-        "roleId": 1
-      },
-      "id": 3
     }
   ]
 }
