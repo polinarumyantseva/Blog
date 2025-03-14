@@ -8,7 +8,7 @@ import { server } from '../../bff';
 import { Input, Button, H2, AuthFormError } from '../../components';
 import { setUser } from '../../actions';
 import { ROLE } from '../../constants';
-import { selectRoleId } from '../../selectors';
+import { selectUserRole } from '../../selectors';
 import { useResetForm } from '../../hooks';
 import styles from './registration.module.css';
 
@@ -48,7 +48,7 @@ export const Registration = () => {
 
 	const [serverError, setServerError] = useState(null);
 	const dispatch = useDispatch();
-	const roleId = useSelector(selectRoleId);
+	const roleId = useSelector(selectUserRole);
 
 	useResetForm(reset);
 

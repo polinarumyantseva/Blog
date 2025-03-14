@@ -1,4 +1,4 @@
-export * from './selectRoleId';
+export * from './selectUserRole';
 export * from './selectLogin';
 export * from './selectUserSession';
 export * from './selectPost';

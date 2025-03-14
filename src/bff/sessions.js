@@ -15,8 +15,8 @@ export const sessions = {
 		deleteSession(session.id);
 	},
 	async access(hash, accessRole) {
-		const session = await getSession(hash);
+		const dbSession = await getSession(hash);
 
-		return !!session.user && accessRole.includes(session.user.roleId);
+		return !!dbSession?.user && accessRole.includes(dbSession.user.roleId);
 	},
 };

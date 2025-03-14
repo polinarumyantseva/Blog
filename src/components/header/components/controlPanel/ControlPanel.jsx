@@ -2,14 +2,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Icon, Button } from '../../../../components';
 import { ROLE } from '../../../../constants';
-import { selectRoleId, selectLogin, selectUserSession } from '../../../../selectors';
+import { selectUserRole, selectLogin, selectUserSession } from '../../../../selectors';
 import { logout } from '../../../../actions';
 import styles from './controlPanel.module.css';
 
 export const ControlPanel = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
-	const roleId = useSelector(selectRoleId);
+	const roleId = useSelector(selectUserRole);
 	const login = useSelector(selectLogin);
 	const session = useSelector(selectUserSession);
 

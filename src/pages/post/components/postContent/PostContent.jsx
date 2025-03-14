@@ -8,7 +8,7 @@ export const PostContent = ({ post: { id, title, content, publishedAt, imageUrl 
 
 	return (
 		<div className={styles['post-content']}>
-			<img className={styles['post-img']} src={imageUrl} alt={title} />
+			{imageUrl && <img className={styles['post-img']} src={imageUrl} alt={title} />}
 			<H2>{title}</H2>
 			<SpecialPanel
 				id={id}

@@ -2,7 +2,7 @@ import { ROLE } from '../constants';
 import { getRoles } from '../api';
 import { sessions } from '../sessions';
 
-export const fetchRoles = async (has) => {
+export const fetchRoles = async (hash) => {
 	const accessRole = [ROLE.ADMIN];
 
 	const access = await sessions.access(hash, accessRole);
