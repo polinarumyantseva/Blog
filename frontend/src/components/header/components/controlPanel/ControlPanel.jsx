@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Icon, Button } from '../../../../components';
+import { Icon, Button } from '../../..';
 import { ROLE } from '../../../../constants';
 import { selectUserRole, selectLogin, selectUserSession } from '../../../../selectors';
 import { logout } from '../../../../actions';
