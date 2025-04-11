@@ -13,7 +13,7 @@ export const PostCard = ({ id, title, imageUrl, publishedAt, commentsCount }) =>
 					<div className={styles['post-card-info']}>
 						<div className={styles['published-at']}>
 							<Icon className="panel-icon" id="calendar-o" />
-							{publishedAt}
+							{new Date(publishedAt).toLocaleString('ru')}
 						</div>
 						<div className={styles['comments-count']}>
 							<Icon className="panel-icon" id="comment-o" />

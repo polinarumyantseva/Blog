@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Icon } from '../../../../../../components';
 import { removeCommentAsync, openModal, CLOSE_MODAL } from '../../../../../../actions';
-import { useServerRequest } from '../../../../../../hooks';
 import { ROLE } from '../../../../../../constants';
 import { selectUserRole } from '../../../../../../selectors';
 import styles from './comment.module.css';
@@ -10,14 +9,13 @@ import styles from './comment.module.css';
 export const Comment = ({ postId, id, content, author, publishedAt }) => {
 	const userRole = useSelector(selectUserRole);
 	const dispatch = useDispatch();
-	const requestServer = useServerRequest();
 
 	const onCommentRemove = (id) => {
 		dispatch(
 			openModal({
 				text: 'Удалить комментарий?',
 				onConfirm: () => {
-					dispatch(removeCommentAsync(requestServer, postId, id));
+					dispatch(removeCommentAsync(postId, id));
 					dispatch(CLOSE_MODAL);
 				},
 				onCancel: () => dispatch(CLOSE_MODAL),
@@ -36,7 +34,7 @@ export const Comment = ({ postId, id, content, author, publishedAt }) => {
 					</div>
 					<div className={styles['published-at']}>
 						<Icon id="calendar-o" />
-						{publishedAt}
+						{new Date(publishedAt).toLocaleString('ru')}
 					</div>
 				</div>
 				<div className={styles['comment-text']}>{content}</div>

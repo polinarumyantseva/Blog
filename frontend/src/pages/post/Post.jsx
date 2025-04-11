@@ -1,7 +1,6 @@
 import { useState, useEffect, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMatch, useParams } from 'react-router-dom';
-import { useServerRequest } from '../../hooks';
 import { Comments, PostContent, PostForm } from './components';
 import { loadPostAsync, RESET_POST_DATA } from '../../actions';
 import { selectPost } from '../../selectors';
@@ -16,7 +15,6 @@ export const Post = () => {
 	const params = useParams();
 	const isCreating = !!useMatch('/post');
 	const isEditing = !!useMatch('/post/:id/edit');
-	const requestServer = useServerRequest();
 	const post = useSelector(selectPost);
 
 	useLayoutEffect(() => {
@@ -29,11 +27,11 @@ export const Post = () => {
 			return;
 		}
 
-		dispatch(loadPostAsync(requestServer, params.id)).then((postData) => {
+		dispatch(loadPostAsync(params.id)).then((postData) => {
 			setError(postData.error);
 			setIsLoading(false);
 		});
-	}, [dispatch, requestServer, isCreating, params.id]);
+	}, [dispatch, isCreating, params.id]);
 
 	if (isLoading) {
 		return null;

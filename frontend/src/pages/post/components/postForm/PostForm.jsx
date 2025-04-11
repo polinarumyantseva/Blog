@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Input, Icon } from '../../../../components';
 import { SpecialPanel } from '../specialPanel/SpecialPanel';
-import { useServerRequest } from '../../../../hooks';
 import { savePostAsync } from '../../../../actions';
 import { sanitizeContent } from './utils';
 import { PROP_TYPE } from '../../../../constants';
@@ -11,7 +10,6 @@ import styles from './postForm.module.css';
 
 export const PostForm = ({ post: { id, title, content, publishedAt, imageUrl } }) => {
 	const dispatch = useDispatch();
-	const requestServer = useServerRequest();
 	const navigate = useNavigate();
 
 	const [imageUrlValue, setImageUrlValue] = useState(imageUrl);
@@ -26,9 +24,9 @@ export const PostForm = ({ post: { id, title, content, publishedAt, imageUrl } }
 	const onSave = () => {
 		const newContent = sanitizeContent(contentRef.current.innerHTML);
 
-		dispatch(
-			savePostAsync(requestServer, { id, imageUrl: imageUrlValue, title: titleValue, content: newContent }),
-		).then(({ id }) => navigate(`/post/${id}`));
+		dispatch(savePostAsync(id, { imageUrl: imageUrlValue, title: titleValue, content: newContent })).then(
+			({ id }) => navigate(`/post/${id}`),
+		);
 	};
 
 	const onImageChange = ({ target }) => {

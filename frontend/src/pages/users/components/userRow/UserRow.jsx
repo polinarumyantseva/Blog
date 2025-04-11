@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Icon } from '../../../../components';
-import { useServerRequest } from '../../../../hooks';
 import { PROP_TYPE } from '../../../../constants';
 import styles from './userRow.module.css';
+import { request } from '../../../../utils';
 
 export const UserRow = ({ id, login, registedAt, roleId: userRoleId, roles, onUserRemove }) => {
 	const [initialRoleId, setInitialRoleId] = useState(userRoleId);
@@ -13,10 +13,8 @@ export const UserRow = ({ id, login, registedAt, roleId: userRoleId, roles, onUs
 		setSelectedRoleId(Number(target.value));
 	};
 
-	const requestServer = useServerRequest();
-
 	const onRoleSave = (userId, newUserRoleId) => {
-		requestServer('updateUserRole', userId, newUserRoleId).then(() => {
+		request(`/api/users/${userId}`, 'PATCH', { roleId: newUserRoleId }).then(() => {
 			setInitialRoleId(newUserRoleId);
 		});
 	};
@@ -27,7 +25,7 @@ export const UserRow = ({ id, login, registedAt, roleId: userRoleId, roles, onUs
 		<div className={styles['table-row']}>
 			<div className={styles['user-data']}>
 				<div className={styles['login-column']}>{login}</div>
-				<div className={styles['registered-at-column']}>{registedAt}</div>
+				<div className={styles['registered-at-column']}>{new Date(registedAt).toLocaleString('ru')}</div>
 				<div className={styles['role-column']}>
 					<select value={selectedRoleId} onChange={onRoleChange}>
 						{roles.map(({ id: roleId, name: roleName }) => (
